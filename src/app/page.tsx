@@ -4,8 +4,7 @@ export default function Home() {
   return (
     <div className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col justify-center">
 
-      {/* --- BANNER DESKTOP (Só aparece acima de 1280px agora) --- */}
-      {/* Para 1024px, vamos esconder este banner e usar o layout vertical */}
+      {/* --- BANNER DESKTOP --- */}
       <Image
         src="/banner.jpg"
         alt="Banner Desktop"
@@ -21,8 +20,11 @@ export default function Home() {
         <div className="w-full xl:max-w-lg flex flex-col items-center xl:items-start text-center xl:text-left space-y-6 md:space-y-10 xl:space-y-8 mb-4 xl:mb-32">
           
           {/* --- 1. IMAGEM DOGUP (Topo) --- */}
-          {/* Ajustado: md:w-72 (aumenta para tablet/1024px) */}
-          <div className="xl:hidden mt-2  relative w-40 h-40 sm:w-52 sm:h-52 md:w-80 md:h-80 lg:w-96 lg:h-96">
+          {/* ALTERAÇÕES AQUI:
+              1. Adicionei '-mt-12' (celular) e '-mt-32' (tablet/md) para puxar a imagem para o topo.
+              2. Adicionei 'mb-6' para empurrar o texto de baixo um pouco, para não colar na imagem.
+          */}
+          <div className="xl:hidden relative mb-6 -mt-12 sm:-mt-20 md:-mt-32 w-40 h-40 sm:w-52 sm:h-52 md:w-80 md:h-80 lg:w-96 lg:h-96">
              <Image 
                src="/dogup.jpg"
                alt="dog destak"
@@ -33,7 +35,6 @@ export default function Home() {
           </div>
 
           {/* Título */}
-          {/* Ajustado: tamanhos maiores para md e lg */}
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight drop-shadow-sm">
             Pamper´s Pets House
           </h1>
@@ -52,8 +53,7 @@ export default function Home() {
           </button>
 
           {/* --- 2. IMAGEM 3DOGS (Fundo) --- */}
-          {/* Ajustado: Aumentei significativamente para 1024px */}
-          <div className="xl:hidden mt-6 relative w-60 h-24 sm:w-80 sm:h-32 md:w-[500px] md:h-[200px]">
+          <div className="xl:hidden mt-8 relative w-60 h-24 sm:w-80 sm:h-32 md:w-[500px] md:h-[200px]">
              <Image 
                src="/3dogs.png"
                alt="Three dogs"
