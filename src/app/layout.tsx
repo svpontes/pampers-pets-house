@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* O AuthProvider envolve tudo para permitir que a Navbar use a sessão */}
+        
         <AuthProvider>
           <Navbar />
           {children}
