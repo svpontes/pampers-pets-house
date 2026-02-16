@@ -10,9 +10,16 @@ export default function Navbar() {
   // State to manage the visibility of the mobile menu (hamburger)
   const [isOpen, setIsOpen] = useState(false);
   
-  // 2. Retrieve session data (checks if user is logged in)
+  // 2. Retrieve session data (checks if user is logged in)***
   // 'session' will be null if unauthenticated, or contain user data if logged in
-  const { data: session } = useSession();
+  // ADDED 'status' here to help with debugging
+  const { data: session, status } = useSession();
+
+  // --- DEBUG LOGS (Check your browser console F12) ---
+  console.log("--- NAVBAR DEBUG ---");
+  console.log("Auth Status:", status); // Should be 'loading', 'authenticated', or 'unauthenticated'
+  console.log("Session Data:", session); // Should show user object if logged in
+  // --------------------------------------------------
 
   // Handler to toggle mobile menu open/close state
   const toggleMenu = () => {
